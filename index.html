@@ -14,7 +14,7 @@ function updateScene(ix) {
 	var carpetPlane = sceneEl.querySelector('#carpetPlane');
 	var skyBox = sceneEl.querySelector('#sky');
 
-	console.log(timeline[ix]);
+	// console.log(timeline[ix]);
 
 	yearText.setAttribute('text-geometry', 'value', timeline[ix]["Display Date"]);
 	carpetPlane.setAttribute('src', timeline[ix]["Media"]);
@@ -27,6 +27,7 @@ function updateScene(ix) {
 	responsiveVoice.speak(timeline[ix]["Headline"]);
 }
 
+window.alert('Press k to go forward, j to go back');
 document.addEventListener('keypress', (event) => {
   const keyName = event.key;
 	// console.log(event);
