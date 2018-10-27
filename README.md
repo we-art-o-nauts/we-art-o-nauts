@@ -4,7 +4,7 @@
 
 The goal of this project is to enhance the appreciation of art through deeper context.
 
-We are using the Virtual/Augmented Reality toolkit from Mozilla called [A-Frame](https://aframe.io/docs/). To work on this project, just download the repository and edit `index.html` in a text editor. There are some resources in the `data` folder.
+To work on this project, just download the repository and edit `index.html` in a text editor. There are some resources in the `data` folder.
 
 **Demo:** [schoolofdata.ch/workshops/2018/weartonauts/](http://schoolofdata.ch/workshops/2018/weartonauts/)
 
@@ -16,7 +16,13 @@ The museum people shared all the data available on the object with us, and we fu
 
 Although there is some information on the Wikipedia article [Bildwirkerei](https://de.wikipedia.org/wiki/Bildwirkerei), we could find very little on the technical term [Wollwirkerei](https://de.wikipedia.org/w/index.php?title=Spezial:Suche&search=Wollwirkerei) used in the catalog. The question of how to make information about the methods and history of art objects fascinated our team.
 
+# Tech
+
 We created a spreadsheet using the [Timeline JS](https://timeline.knightlab.com/) template, and our code accesses the document published using Google Docs, so that the timeline could be visualized both in the original "2D form" and our 3D edition.
+
+We are using the Virtual/Augmented Reality toolkit from Mozilla called [A-Frame](https://aframe.io/docs/).
+
+Text-to-speech voiceovers are generated with [Responsive Voice](https://responsivevoice.org/).
 
 # Team
 
