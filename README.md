@@ -24,6 +24,17 @@ We are using the Virtual/Augmented Reality toolkit from Mozilla called [A-Frame]
 
 Text-to-speech voiceovers are generated with [Responsive Voice](https://responsivevoice.org/).
 
+# Instructions
+
+1. Download this repository to your computer (e.g. GitHub Desktop) and open the folder with the project.
+2. In a command line (Mac: Terminal), go to the project folder using the **cd** (change directory) command, e.g.:
+`cd /Users/marinapardini/GitHub/weartonauts`
+3. Type a Python command to start a webserver:
+`python -m http.server`
+4. Make sure the phone and the computer are connected to the same network (`opendatach`)
+5. You will see something like "Serving HTTP on 0.0.0.0 port 8000". Open the Web browser on the phone to the address of your network connection (something like 192.168.7.123 instead of 0.0.0.0) but with the appropriate **port number**, e.g. type `192.168.7.123:8000`
+6. If everything loads up, you should see a little cardboard icon. Tap it.
+
 # Team
 
 -
