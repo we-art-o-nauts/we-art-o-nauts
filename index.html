@@ -145,6 +145,10 @@ AFRAME.registerComponent('change-color-on-hover', {
     var defaultColor = el.getAttribute('material').color;
 
     el.addEventListener('mouseenter', function () {
+			if (data.color=='fadein') {
+				el.setAttribute('material', 'opacity', '1.0');
+				return;
+			}
 			// console.log(data.say);
 			el.querySelector('a-text').setAttribute('visible', 'true');
 			if (data.say.length > 3)
@@ -153,6 +157,10 @@ AFRAME.registerComponent('change-color-on-hover', {
       el.setAttribute('color', data.color);
     });
     el.addEventListener('mouseleave', function () {
+			if (data.color=='fadein') {
+				el.setAttribute('material', 'opacity', '0.4');
+				return;
+			}
 			el.querySelector('a-text').setAttribute('visible', 'false');
       el.setAttribute('color', defaultColor);
     });
@@ -211,7 +219,7 @@ Papa.parse(url, {
 
 	<a-sky src="#sky" rotation="0 0 0" radius='100'></a-sky>
 
-	<a-entity id="carpetPlane" geometry="primitive: plane; width: 12; height: 8;" position="0 -3 0" rotation="-90 0 0" material="src: #carpet; repeat: 1 1;"></a-entity>
+	<a-entity id="carpetPlane" geometry="primitive: plane; width: 12; height: 8;" position="0 -3 0" rotation="-90 0 0" material="src: #carpet; repeat: 1 1; opacity:0.4" change-color-on-hover="color:fadein"></a-entity>
 
  	<a-camera>
 	 	<a-cursor></a-cursor>
