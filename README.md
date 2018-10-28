@@ -39,4 +39,4 @@ Text-to-speech voiceovers are generated with [Responsive Voice](https://responsi
 - [Kamontat Chantrachirathumrong](https://github.com/kamontat) (Developer)
 - [Xia Willuhn](https://github.com/xwilluhn) (Developer)
 - [Oleg Lavrovsky](https://github.com/loleg) (Developer)
-- Birk Weiberg (Expert)
+- [Birk Weiberg](https://github.com/birk) (Expert)
