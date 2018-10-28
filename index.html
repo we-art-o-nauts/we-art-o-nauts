@@ -33,15 +33,15 @@ function createScene() {
 	// console.log(timeline);
 	timeline.forEach(function(entry, i) {
 
-		var tt = entry["Display Date"].trim();
+		var tt = entry["DisplayDate"];
 		// var ttlr = CARD_FONT_SIZE; //100 / (tt.length+2);
 		// // ttlr = (tt.length > 8) ? ttlr*2 : ttlr;
 
 		var imgsrc = '';
 		if (entry["Media"]) {
-			imgsrc = entry["Media"].split('/');
-			imgsrc = (imgsrc.length>0) ?
-				'data/cache/' + imgsrc[imgsrc.length-1].replace(/[^a-z0-9\.\-]/gi, '_') : '';
+			imgsrc = entry["Media"];
+			// imgsrc = (imgsrc.length>0) ?
+			// 	'data/cache/' + imgsrc[imgsrc.length-1].replace(/[^a-z0-9\.\-]/gi, '_') : '';
 		}
 
 		var elText = document.createElement('div');
