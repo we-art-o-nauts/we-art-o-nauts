@@ -202,7 +202,7 @@ Papa.parse(url, {
 
 	<a-assets>
 		<img id="sky" src="data/WqlqEkq.jpg" crossorigin="anonymous" />
-		<!-- <img id="carpet" src="data/DIG-4902_DEP-65.jpg" crossorigin="anonymous"> -->
+		<img id="carpet" src="data/DIG-4902_DEP-65.jpg" crossorigin="anonymous">
 		<!-- <a-asset-item id="dawningFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2FdawningOfANewDayRegular.typeface.json?1490305922844"></a-asset-item> -->
 	</a-assets>
 
@@ -211,8 +211,11 @@ Papa.parse(url, {
 
 	<a-sky src="#sky" rotation="0 0 0" radius='100'></a-sky>
 
- 	<a-camera/>
- 	<a-cursor></a-cursor>
+	<a-entity id="carpetPlane" geometry="primitive: plane; width: 12; height: 8;" position="0 -3 0" rotation="-90 0 0" material="src: #carpet; repeat: 1 1;"></a-entity>
+
+ 	<a-camera>
+	 	<a-cursor></a-cursor>
+	</a-camera>
 </a-scene>
 </body>
 
