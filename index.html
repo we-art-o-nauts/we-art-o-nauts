@@ -67,7 +67,7 @@ function createScene() {
 			'y': THREE.Math.radToDeg(helix.rotation.y),
 			'z': THREE.Math.radToDeg(helix.rotation.z)
 		};
-		rdeg.y = (rdeg.x < 0) ? -rdeg.y : rdeg.y;
+		rdeg.y = (rdeg.x < 0 || rdeg.x == 180) ? -rdeg.y : rdeg.y;
 		helix.position.y = (i % 2 == 0) ? CARD_OFFSET : -CARD_OFFSET;
 		helix.position.y += HELIX_VERTICAL_OFFSET;
 
@@ -83,7 +83,9 @@ function createScene() {
 		elPlane.setAttribute('position', helix.position);
 		elPlane.setAttribute('rotation', rdeg);
 		elPlane.setAttribute('color', '#FFFFFF');
-		elPlane.setAttribute('material', 'shader: html; target: #' + elTextID);
+		elPlane.setAttribute('material', 'shader', 'html');
+		elPlane.setAttribute('material', 'target', '#' + elTextID);
+		// elPlane.setAttribute('material', 'side', 'double');
 
 		// elPlane.setAttribute('change-color-on-hover', 'show', entry['Headline']);
 		elPlane.setAttribute('change-color-on-hover', 'say', entry['Text']);
