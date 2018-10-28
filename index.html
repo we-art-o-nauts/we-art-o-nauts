@@ -9,7 +9,8 @@
 
 <script cdn="https://fastcdn.org/Papa-Parse/4.1.2/papaparse.min.js"
 	src='js/papaparse.min.js'></script>
-<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+<script cdn='https://code.responsivevoice.org/responsivevoice.js'
+	src='js/responsivevoice.js'></script>
 
 <script language="JavaScript">
 var url = 'data/Carpet Dates 2 - od1.csv';
@@ -86,8 +87,22 @@ function createScene() {
 		elPlane.setAttribute('color', '#FFFFFF');
 		elPlane.setAttribute('material', 'shader: html; target: #' + elTextID);
 
-		elPlane.setAttribute('change-color-on-hover', 'show', entry['Headline']);
+		// elPlane.setAttribute('change-color-on-hover', 'show', entry['Headline']);
 		elPlane.setAttribute('change-color-on-hover', 'say', entry['Text']);
+
+		var elBanner = document.createElement('a-text');
+		elBanner.setAttribute('value', entry['Headline']);
+		elBanner.setAttribute('position', "0 -" + (CARD_HEIGHT/2) + " 1");
+		elBanner.setAttribute('align', "center");
+		elBanner.setAttribute('color', "#fff");
+		elBanner.setAttribute('geometry', "primitive", "plane");
+		elBanner.setAttribute('geometry', "width", CARD_WIDTH*2);
+		elBanner.setAttribute('geometry', "height", 2);
+		elBanner.setAttribute('material', "color", "#333");
+		elBanner.setAttribute('visible', "false");
+		elBanner.setAttribute('wrap-count', "40");
+		elBanner.setAttribute('width', "12");
+    elPlane.appendChild(elBanner);
 
 	sceneEl.appendChild(elPlane);
 
@@ -130,13 +145,15 @@ AFRAME.registerComponent('change-color-on-hover', {
     var defaultColor = el.getAttribute('material').color;
 
     el.addEventListener('mouseenter', function () {
-			console.log(data.say);
+			// console.log(data.say);
+			el.querySelector('a-text').setAttribute('visible', 'true');
 			if (data.say.length > 3)
 				responsiveVoice.speak(data.say, "UK English Male", {
 					pitch: 0.7, rate: 0.9});
       el.setAttribute('color', data.color);
     });
     el.addEventListener('mouseleave', function () {
+			el.querySelector('a-text').setAttribute('visible', 'false');
       el.setAttribute('color', defaultColor);
     });
   }
