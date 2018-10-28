@@ -2,8 +2,10 @@
 	src='js/aframe/aframe-v0.8.2.min.js'></script>
 <script cdn="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"
 	src='js/aframe-components/aframe-text-geometry-component.min.js'></script>
-<script cdn="https://unpkg.com/..."
+<script cdn="https://unpkg.com/aframe-html-shader@0.2.0/dist/aframe-html-shader.min.js"
 	src='js/aframe-components/aframe-html-shader.min.js'></script>
+<script cdn="https://unpkg.com/aframe-event-set-component@4.1.2/dist/aframe-event-set-component.min.js"
+	src='js/aframe-components/aframe-event-set-component.min.js'></script>
 
 <script cdn="https://fastcdn.org/Papa-Parse/4.1.2/papaparse.min.js"
 	src='js/papaparse.min.js'></script>
@@ -74,6 +76,10 @@ function createScene() {
 		if (i == 0) {
 			elPlane = document.createElement('a-circle');
 			elPlane.setAttribute('radius', CARD_WIDTH / 2);
+
+			// elPlane.setAttribute('event-set__enter', '_event', 'mouseenter');
+			// elPlane.setAttribute('event-set__enter', 'color', '#8FF7FF');
+			// elPlane.setAttribute('event-set__leave', "_event: mouseleave; color: #4CC3D9");
 		} else {
 			elPlane = document.createElement('a-plane');
 			elPlane.setAttribute('width', CARD_WIDTH);
@@ -83,6 +89,10 @@ function createScene() {
 		elPlane.setAttribute('rotation', rdeg);
 		elPlane.setAttribute('color', '#FFFFFF');
 		elPlane.setAttribute('material', 'shader: html; target: #' + elTextID);
+
+		elPlane.setAttribute('change-color-on-hover', 'show', entry['Headline']);
+		elPlane.setAttribute('change-color-on-hover', 'say', entry['Text']);
+
 	sceneEl.appendChild(elPlane);
 
 	var elLine = document.createElement('a-entity');
@@ -112,6 +122,27 @@ function createScene() {
 
 });  //- forEach
 } //- createScene
+
+AFRAME.registerComponent('change-color-on-hover', {
+  schema: {
+		color: {default: '#99ff99'},
+		show: {default: ''},
+    say: {default: ''},
+  },
+  init: function () {
+    var data = this.data;
+    var el = this.el;  // <a-box>
+    var defaultColor = el.getAttribute('material').color;
+
+    el.addEventListener('mouseenter', function () {
+			console.log(data.say);
+      el.setAttribute('color', data.color);
+    });
+    el.addEventListener('mouseleave', function () {
+      el.setAttribute('color', defaultColor);
+    });
+  }
+});
 
 // A bit of math a day keeps the bocktor away
 function getHelix(i, total, distance) {
@@ -156,8 +187,8 @@ Papa.parse(url, {
 
 	<a-assets>
 		<img id="sky" src="data/WqlqEkq.jpg" crossorigin="anonymous" />
-		<img id="carpet" src="data/DIG-4902_DEP-65.jpg" crossorigin="anonymous">
-		<a-asset-item id="dawningFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2FdawningOfANewDayRegular.typeface.json?1490305922844"></a-asset-item>
+		<!-- <img id="carpet" src="data/DIG-4902_DEP-65.jpg" crossorigin="anonymous"> -->
+		<!-- <a-asset-item id="dawningFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2FdawningOfANewDayRegular.typeface.json?1490305922844"></a-asset-item> -->
 	</a-assets>
 
 	<a-entity id="theLight" light="color: white; intensity: 0.5" position="-5 5 15"></a-entity>
@@ -165,8 +196,8 @@ Papa.parse(url, {
 
 	<a-sky src="#sky" rotation="0 0 0" radius='100'></a-sky>
 
-	<a-camera-static/>
-
+ 	<a-camera/>
+ 	<a-cursor></a-cursor>
 </a-scene>
 </body>
 
