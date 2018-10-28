@@ -9,7 +9,7 @@
 
 <script cdn="https://fastcdn.org/Papa-Parse/4.1.2/papaparse.min.js"
 	src='js/papaparse.min.js'></script>
-<!-- <script src='https://code.responsivevoice.org/responsivevoice.js'></script> -->
+<script src='https://code.responsivevoice.org/responsivevoice.js'></script>
 
 <script language="JavaScript">
 var url = 'data/Carpet Dates 2 - od1.csv';
@@ -76,10 +76,6 @@ function createScene() {
 		if (i == 0) {
 			elPlane = document.createElement('a-circle');
 			elPlane.setAttribute('radius', CARD_WIDTH / 2);
-
-			// elPlane.setAttribute('event-set__enter', '_event', 'mouseenter');
-			// elPlane.setAttribute('event-set__enter', 'color', '#8FF7FF');
-			// elPlane.setAttribute('event-set__leave', "_event: mouseleave; color: #4CC3D9");
 		} else {
 			elPlane = document.createElement('a-plane');
 			elPlane.setAttribute('width', CARD_WIDTH);
@@ -118,7 +114,6 @@ function createScene() {
 	// carpetPlane.setAttribute('material', 'opacity', diff/500);
 	// carpetPlane.setAttribute('src', timeline[ix]["Media"]);
 	//
-	// responsiveVoice.speak(timeline[ix]["Headline"]);
 
 });  //- forEach
 } //- createScene
@@ -136,6 +131,9 @@ AFRAME.registerComponent('change-color-on-hover', {
 
     el.addEventListener('mouseenter', function () {
 			console.log(data.say);
+			if (data.say.length > 3)
+				responsiveVoice.speak(data.say, "UK English Male", {
+					pitch: 0.7, rate: 0.9});
       el.setAttribute('color', data.color);
     });
     el.addEventListener('mouseleave', function () {
