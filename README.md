@@ -1,14 +1,12 @@
-# weartonauts
+# ![we-art-o-nauts](data/logo1.png)
 
-*A [#GLAMhack](https://glam.opendata.ch) project*
+The goal of this [#GLAMhack](https://glam.opendata.ch) project is to enhance the appreciation of art through deeper context. For more background see our website https://we-art-o-nauts.github.io/
 
-The goal of this project is to enhance the appreciation of art through deeper context.
-
-To work on this project, just download the repository and edit `index.html` in a text editor. There are some resources in the `data` folder.
+To contribute, just download the repository and edit `index.html` in a text editor. There are some resources in the `data` folder, and scripts we depend on in `js`.
 
 **Demo:** [schoolofdata.ch/workshops/2018/weartonauts/](http://schoolofdata.ch/workshops/2018/weartonauts/)
 
-# Background
+## Background
 
 During the 2018 Open Cultural Data Hackathon at the Swiss National Museum, we were impressed by a huge tapestry that is currently part of the permanent collection - the [Allianzteppich](https://www.nationalmuseum.ch/sammlung_online/?lauftext=DEP-65&sID=&numOf=30&detailID=177198#177198) (nationalmuseum.ch)
 
@@ -16,7 +14,7 @@ The museum people shared all the data available on the object with us, and we fu
 
 Although there is some information on the Wikipedia article [Bildwirkerei](https://de.wikipedia.org/wiki/Bildwirkerei), we could find very little on the technical term [Wollwirkerei](https://de.wikipedia.org/w/index.php?title=Spezial:Suche&search=Wollwirkerei) used in the catalog. The question of how to make information about the methods and history of art objects fascinated our team.
 
-# Tech
+## Tech
 
 We created a spreadsheet using the [Timeline JS](https://timeline.knightlab.com/) template, and our code accesses the document published using Google Docs, so that the timeline could be visualized both in the original "2D form" and our 3D edition.
 
@@ -24,7 +22,7 @@ We are using the Virtual/Augmented Reality toolkit from Mozilla called [A-Frame]
 
 Text-to-speech voiceovers are generated with [Responsive Voice](https://responsivevoice.org/).
 
-# Instructions
+## Instructions
 
 1. Download this repository to your computer (e.g. GitHub Desktop) and open the folder with the project.
 2. In a command line (Mac: Terminal), go to the project folder using the **cd** (change directory) command, e.g.:
@@ -37,8 +35,8 @@ Text-to-speech voiceovers are generated with [Responsive Voice](https://responsi
 
 # Team
 
--
--
--
--
--
+- [Marina Pardini](http://www.marinapardini.com/) (UX designer)
+- [Birk Weiberg](https://www.hslu.ch/en/lucerne-university-of-applied-sciences-and-arts/about-us/people-finder/profile/?pid=4072) (Expert)
+- [Kamontat Chantrachirathumrong](https://github.com/kamontat) (Developer)
+- [Xia Willuhn](https://github.com/xwilluhn) (Developer)
+- [Oleg Lavrovsky](https://github.com/loleg) (Developer)
