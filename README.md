@@ -36,7 +36,7 @@ Text-to-speech voiceovers are generated with [Responsive Voice](https://responsi
 # Team
 
 - [Marina Pardini](http://www.marinapardini.com/) (UX designer)
-- [Birk Weiberg](https://www.hslu.ch/en/lucerne-university-of-applied-sciences-and-arts/about-us/people-finder/profile/?pid=4072) (Expert)
 - [Kamontat Chantrachirathumrong](https://github.com/kamontat) (Developer)
 - [Xia Willuhn](https://github.com/xwilluhn) (Developer)
 - [Oleg Lavrovsky](https://github.com/loleg) (Developer)
+- Birk Weiberg (Expert)
